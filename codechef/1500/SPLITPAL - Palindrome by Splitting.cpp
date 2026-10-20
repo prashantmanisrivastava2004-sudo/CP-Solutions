@@ -21,7 +21,6 @@ int main() {
 	       if(x==y){
 	           dq.pop_front();
 	           dq.pop_back();
-	           
 	       }
 	       else if(x<y){
 	           dq.pop_front();
