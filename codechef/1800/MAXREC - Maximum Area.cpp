@@ -1,17 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int>prev_small(vector<int>&pref){
+vector<int>prev_min(vector<int>&arr){
+    int n = arr.size();
+    vector<int>ans(n,-1);
     stack<int>st;
-    int N = pref.size();
-    vector<int>ans(N);
-    for(int i=0; i<N; i++){
-        while(st.size()>0 && pref[st.top()]>=pref[i]){
+    for(int i=0; i<n; i++){
+        while(st.size()>0 && arr[st.top()]>=arr[i]){
             st.pop();
         }
-        if(st.size()==0){
-            ans[i]= -1;
-        }else{
+        if(!st.empty()){
             ans[i] = st.top();
         }
         st.push(i);
@@ -19,55 +17,55 @@ vector<int>prev_small(vector<int>&pref){
     return ans;
 }
 
-vector<int>next_small(vector<int>&pref){
+vector<int>next_min(vector<int>&arr){
+    int n = arr.size();
+    vector<int>ans(n,n);
     stack<int>st;
-    int N = pref.size();
-    vector<int>ans(N);
-    for(int i=N-1; i>=0; i--){
-        while(st.size()>0 && pref[st.top()]>=pref[i]){
+    for(int i=n-1; i>=0; i--){
+        while(st.size()>0 && arr[st.top()]>arr[i]){
             st.pop();
         }
-        if(st.size()==0){
-            ans[i]= N;
-        }else{
+        if(!st.empty()){
             ans[i] = st.top();
         }
         st.push(i);
     }
     return ans;
 }
-int largest_hist(vector<int>&pref){
-    vector<int>prev = prev_small(pref);
-    vector<int>next = next_small(pref);
+int largest_hist(vector<int>&arr){
+    vector<int>prev = prev_min(arr);
+    vector<int>next = next_min(arr);
     long long mx = 0;
-    for(int i=0; i<pref.size(); i++){
+    for(int i=0; i<arr.size(); i++){
         int width = next[i]-prev[i]-1;
-        long long area = pref[i]*width*1LL;
-        mx = max(mx,area);
+        long long ans = 1LL*width*arr[i];
+        mx = max(mx,ans);
     }
     return mx;
 }
 
+
 int main() {
-	int N, M;
+	int N,M;
 	cin>>N>>M;
-	vector<vector<int>>matrix(N,vector<int>(M,-1));
+	vector<vector<int>>Matrix(N,vector<int>(M,0));
 	for(int i=0; i<N; i++){
 	    for(int j=0; j<M; j++){
-	        cin>>matrix[i][j];
+	        cin>>Matrix[i][j];
 	    }
 	}
-	long long int mx = 0;
 	vector<int>heights(M,0);
+	long long mx = 0;
 	for(int i=0; i<N; i++){
 	    for(int j=0; j<M; j++){
-	       if(matrix[i][j]==0){
-	           heights[j] =0;
-	       }else{
-	           heights[j] += 1;
-	       }
+	        if(Matrix[i][j]==0){
+	            heights[j] = 0;
+	        }else{
+	            heights[j] += Matrix[i][j];
+	        }
+	        
 	    }
-	     mx = max(mx,(long long)largest_hist(heights));
+	    mx = max(mx, (long long)largest_hist(heights));
 	}
 	cout<<mx<<endl;
 
