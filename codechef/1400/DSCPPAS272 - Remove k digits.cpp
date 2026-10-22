@@ -15,7 +15,7 @@ string removeKdigits(string num, int k) {
     }
     while(k-- > 0){
             dq.pop_back();
-            --k;
+            
         }
     while(!dq.empty() && dq.front()=='0'){
         dq.pop_front();
