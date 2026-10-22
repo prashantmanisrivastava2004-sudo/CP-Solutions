@@ -64,11 +64,11 @@ Solutions organized by difficulty rating.
 | [1200](./codechef/1200) | 5 |
 | [1300](./codechef/1300) | 2 |
 | [1400](./codechef/1400) | 2 |
-| [1500](./codechef/1500) | 2 |
+| [1500](./codechef/1500) | 3 |
 | [1600](./codechef/1600) | 2 |
 | [1700](./codechef/1700) | 2 |
 | [1800](./codechef/1800) | 1 |
-| [Unrated](./codechef/Unrated) | 11 |
+| [Unrated](./codechef/Unrated) | 10 |
 
 
 ## GeeksforGeeks
