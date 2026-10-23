@@ -7,7 +7,7 @@
 
 
 TreeNode * deserialize(vector < int > & arr) {
-    if (arr.empty() || arr[0] == -1) return NULL;
+    if (arr.empty() || arr[0]==-1) return NULL;
     TreeNode * node = new TreeNode(arr[0]);
     queue < TreeNode * > q;
     q.push(node);
