@@ -12,28 +12,21 @@ struct Node {
 
 class Solution {
   public:
-  
-    int search(vector<int>&preorder, vector<int>&inorder, int val){
-        for(int i=0; i<inorder.size(); i++){
-            if(inorder[i]==val){
-                return i;
-            }
-        }
-        return -1;
-    }
-  
-    Node* buildTree(vector<int>&preorder,vector<int>&inorder,int &preidx, int left, int right){
-        if(left>right)return NULL;
-        Node* root = new Node(preorder[preidx]);
-        int inidx = search(preorder,inorder,preorder[preidx]);
-        preidx++;
-        root->left = buildTree(preorder,inorder,preidx,left,inidx-1);
-        root->right = buildTree(preorder,inorder,preidx,inidx+1, right);
+    Node* buildTreepre(vector<int> &preorder,int ps, int pe, vector<int>&inorder, int is, int ie, map<int,int>&mp){
+        if(ps>pe || is>ie) return NULL;
+        Node* root = new Node(preorder[ps]);
+        int inroot = mp[preorder[ps]];
+        int left = inroot-is;
+        root->left = buildTreepre(preorder,ps+1, ps+left, inorder, is, inroot-1, mp);
+        root->right = buildTreepre(preorder,ps+left+1, pe, inorder, inroot+1, ie, mp);
         return root;
     }
-    Node* constructBinaryTree(vector<int> &preorder, vector<int> inorder) {
-       int preidx = 0;
-       int n = inorder.size();
-      return buildTree(preorder,inorder, preidx, 0, n-1);
+    Node* constructBinaryTree(vector<int> &preorder, vector<int>&inorder) {
+       if(preorder.size() != inorder.size()) return NULL;
+       map<int,int>mp;
+       for(int i=0; i<inorder.size(); i++){
+           mp[inorder[i]]=i;
+       }
+       return buildTreepre(preorder,0, preorder.size()-1, inorder, 0, inorder.size()-1,mp);
     }
 };
