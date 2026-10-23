@@ -7,18 +7,19 @@
 
 class Solution {
     public: void zigzagTraversal(Node * root) {
-        if (!root) return;
         queue < Node * > q;
         q.push(root);
-        bool leftToRight = true;
+        bool leftToright = true;
         while (!q.empty()) {
-            int size = q.size();
-            vector < int > level(size);
-            for (int i = 0; i < size; i++) {
+            int n = q.size();
+            vector < int > level(n);
+            for (int i = 0; i < n; i++) {
                 Node * curr = q.front();
                 q.pop();
-                int index = leftToRight ? i : (size - i - 1);
+
+                int index = leftToright ? i : (n - 1 - i);
                 level[index] = curr -> val;
+
                 if (curr -> left != NULL) {
                     q.push(curr -> left);
                 }
@@ -26,13 +27,12 @@ class Solution {
                     q.push(curr -> right);
                 }
             }
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i < n; i++) {
                 cout << level[i] << " ";
             }
             cout << endl;
-            leftToRight = !leftToRight;
+            leftToright = !leftToright;
+
         }
-
-
     }
 };
