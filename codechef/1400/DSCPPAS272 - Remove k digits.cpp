@@ -9,13 +9,13 @@ string removeKdigits(string num, int k) {
     for(char c: num){
         while(k>0 && !dq.empty() && dq.back()>c){
             dq.pop_back();
-            --k;
+            k--;
         }
         dq.push_back(c);
     }
-    while(k-- > 0){
+    while(k > 0){
             dq.pop_back();
-            
+            k--;
         }
     while(!dq.empty() && dq.front()=='0'){
         dq.pop_front();
