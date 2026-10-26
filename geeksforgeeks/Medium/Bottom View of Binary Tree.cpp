@@ -25,6 +25,7 @@ class Solution {
            Node* curr = q.front().first;
            int currHd = q.front().second;
            q.pop();
+           
            mp[currHd]=curr->data;
            
            if(curr->left){
