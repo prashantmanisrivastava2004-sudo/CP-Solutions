@@ -31,7 +31,7 @@ class Solution {
                 if(root->left != NULL) return root->left;
                 else return root->right;
             }
-            //two child then return inorder succ or predecessor
+            //two child then replace node with inorder succ or predecessor
             else{
                 Node* pred = iop(root);
                 root->val = pred->val;
