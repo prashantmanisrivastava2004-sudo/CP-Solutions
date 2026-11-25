@@ -8,7 +8,7 @@ Codeforces, LeetCode, CSES, CodeChef &amp; GeeksforGeeks solutions, organized cl
 
 Synced automatically by SolveBase.
 
-**Total solved: 161**
+**Total solved: 162**
 
 ## Codeforces
 
@@ -60,7 +60,7 @@ Solutions from the CSES Problem Set, organized by section.
 
 Solutions organized by difficulty rating.
 
-**Solved: 102**
+**Solved: 103**
 
 | Difficulty | Solved |
 | --- | --- |
@@ -73,7 +73,7 @@ Solutions organized by difficulty rating.
 | [1100](./codechef/1100) | 10 |
 | [1200](./codechef/1200) | 12 |
 | [1300](./codechef/1300) | 5 |
-| [1400](./codechef/1400) | 8 |
+| [1400](./codechef/1400) | 9 |
 | [1500](./codechef/1500) | 7 |
 | [1600](./codechef/1600) | 4 |
 | [1700](./codechef/1700) | 3 |
