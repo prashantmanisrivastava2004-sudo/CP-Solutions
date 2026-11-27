@@ -8,7 +8,7 @@ Codeforces, LeetCode, CSES, CodeChef &amp; GeeksforGeeks solutions, organized cl
 
 Synced automatically by SolveBase.
 
-**Total solved: 166**
+**Total solved: 167**
 
 ## Codeforces
 
@@ -25,11 +25,11 @@ Solutions by [Codeforces](https://codeforces.com/profile/), organized by difficu
 
 Solutions organized by primary topic folder.
 
-**Solved: 56**
+**Solved: 57**
 
 | Topic | Solved |
 | --- | --- |
-| [array](./leetcode/array) | 4 |
+| [array](./leetcode/array) | 5 |
 | [backtracking](./leetcode/backtracking) | 1 |
 | [binary-search](./leetcode/binary-search) | 2 |
 | [bit-manipulation](./leetcode/bit-manipulation) | 1 |
@@ -93,5 +93,5 @@ Solutions organized by difficulty level.
 | [Medium](./geeksforgeeks/Medium) | 3 |
 
 
-_Last updated: 2026-11-26_
+_Last updated: 2026-11-27_
 <!-- /cf-sync -->
